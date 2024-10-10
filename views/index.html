@@ -20,7 +20,7 @@
 
 
 {{ block "form" .}}
-  <form hx-post="/contacts">
+  <form hx-target="#contacts" hx-post="/contacts" >
     name: <input type="text" name="name">
     email: <input type="text" name="email">
     <button type="submit">Create contact</button>
@@ -29,7 +29,7 @@
 
 
 {{ block "display" .}}
-  <div>
+  <div id="contacts">
     {{ range .Contacts }}
       <div>
         <span>{{ .Name }}</span>
